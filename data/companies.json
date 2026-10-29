@@ -1,0 +1,1500 @@
+{
+  "companies": [
+    {
+      "name": "1Password",
+      "ats": "ashby",
+      "token": "1password",
+      "sector": "saas"
+    },
+    {
+      "name": "6sense",
+      "ats": "greenhouse",
+      "token": "6sense",
+      "sector": "saas"
+    },
+    {
+      "name": "Acorns",
+      "ats": "ashby",
+      "token": "acorns",
+      "sector": "fintech"
+    },
+    {
+      "name": "Adyen",
+      "ats": "greenhouse",
+      "token": "adyen",
+      "sector": "fintech"
+    },
+    {
+      "name": "Affirm",
+      "ats": "greenhouse",
+      "token": "affirm",
+      "sector": "fintech"
+    },
+    {
+      "name": "Agiloft",
+      "ats": "lever",
+      "token": "agiloft",
+      "sector": "saas"
+    },
+    {
+      "name": "Airbnb",
+      "ats": "greenhouse",
+      "token": "airbnb",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Airbyte",
+      "ats": "ashby",
+      "token": "airbyte",
+      "sector": "saas"
+    },
+    {
+      "name": "Airtable",
+      "ats": "greenhouse",
+      "token": "airtable",
+      "sector": "saas"
+    },
+    {
+      "name": "Alchemy",
+      "ats": "ashby",
+      "token": "alchemy",
+      "sector": "fintech"
+    },
+    {
+      "name": "Algolia",
+      "ats": "greenhouse",
+      "token": "algolia",
+      "sector": "saas"
+    },
+    {
+      "name": "Alloy",
+      "ats": "greenhouse",
+      "token": "alloy",
+      "sector": "fintech"
+    },
+    {
+      "name": "Amplitude",
+      "ats": "ashby",
+      "token": "amplitude",
+      "sector": "saas"
+    },
+    {
+      "name": "AngelList",
+      "ats": "lever",
+      "token": "angellist",
+      "sector": "fintech"
+    },
+    {
+      "name": "Anthropic",
+      "ats": "greenhouse",
+      "token": "anthropic",
+      "sector": "ai"
+    },
+    {
+      "name": "Apollo.io",
+      "ats": "greenhouse",
+      "token": "apolloio",
+      "sector": "saas"
+    },
+    {
+      "name": "Asana",
+      "ats": "greenhouse",
+      "token": "asana",
+      "sector": "saas"
+    },
+    {
+      "name": "Ashby",
+      "ats": "ashby",
+      "token": "ashby",
+      "sector": "saas"
+    },
+    {
+      "name": "Attentive",
+      "ats": "greenhouse",
+      "token": "attentive",
+      "sector": "saas"
+    },
+    {
+      "name": "Baseten",
+      "ats": "ashby",
+      "token": "baseten",
+      "sector": "ai"
+    },
+    {
+      "name": "Benchling",
+      "ats": "ashby",
+      "token": "benchling",
+      "sector": "saas"
+    },
+    {
+      "name": "Betterment",
+      "ats": "greenhouse",
+      "token": "betterment",
+      "sector": "fintech"
+    },
+    {
+      "name": "BILL",
+      "ats": "greenhouse",
+      "token": "billcom",
+      "sector": "fintech"
+    },
+    {
+      "name": "Bird",
+      "ats": "greenhouse",
+      "token": "bird",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Bitwarden",
+      "ats": "greenhouse",
+      "token": "bitwarden",
+      "sector": "saas"
+    },
+    {
+      "name": "Blend",
+      "ats": "greenhouse",
+      "token": "blend",
+      "sector": "fintech"
+    },
+    {
+      "name": "Block",
+      "ats": "greenhouse",
+      "token": "block",
+      "sector": "fintech"
+    },
+    {
+      "name": "Bloomreach",
+      "ats": "greenhouse",
+      "token": "bloomreach",
+      "sector": "saas"
+    },
+    {
+      "name": "Box",
+      "ats": "greenhouse",
+      "token": "boxinc",
+      "sector": "saas"
+    },
+    {
+      "name": "Braze",
+      "ats": "greenhouse",
+      "token": "braze",
+      "sector": "saas"
+    },
+    {
+      "name": "Brex",
+      "ats": "greenhouse",
+      "token": "brex",
+      "sector": "fintech"
+    },
+    {
+      "name": "Buildkite",
+      "ats": "greenhouse",
+      "token": "buildkite",
+      "sector": "saas"
+    },
+    {
+      "name": "Calendly",
+      "ats": "greenhouse",
+      "token": "calendly",
+      "sector": "saas"
+    },
+    {
+      "name": "Capchase",
+      "ats": "ashby",
+      "token": "capchase",
+      "sector": "fintech"
+    },
+    {
+      "name": "Carta",
+      "ats": "greenhouse",
+      "token": "carta",
+      "sector": "fintech"
+    },
+    {
+      "name": "Checkr",
+      "ats": "greenhouse",
+      "token": "checkr",
+      "sector": "saas"
+    },
+    {
+      "name": "Chime",
+      "ats": "greenhouse",
+      "token": "chime",
+      "sector": "fintech"
+    },
+    {
+      "name": "CircleCI",
+      "ats": "greenhouse",
+      "token": "circleci",
+      "sector": "saas"
+    },
+    {
+      "name": "ClassPass",
+      "ats": "greenhouse",
+      "token": "classpass",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Clearco",
+      "ats": "ashby",
+      "token": "clearco",
+      "sector": "fintech"
+    },
+    {
+      "name": "ClickHouse",
+      "ats": "ashby",
+      "token": "clickhouse",
+      "sector": "saas"
+    },
+    {
+      "name": "ClickUp",
+      "ats": "ashby",
+      "token": "clickup",
+      "sector": "saas"
+    },
+    {
+      "name": "Cloudflare",
+      "ats": "greenhouse",
+      "token": "cloudflare",
+      "sector": "saas"
+    },
+    {
+      "name": "Cloudinary",
+      "ats": "lever",
+      "token": "cloudinary",
+      "sector": "saas"
+    },
+    {
+      "name": "Cockroach Labs",
+      "ats": "greenhouse",
+      "token": "cockroachlabs",
+      "sector": "saas"
+    },
+    {
+      "name": "Cohere",
+      "ats": "ashby",
+      "token": "cohere",
+      "sector": "ai"
+    },
+    {
+      "name": "Coinbase",
+      "ats": "greenhouse",
+      "token": "coinbase",
+      "sector": "fintech"
+    },
+    {
+      "name": "Column",
+      "ats": "ashby",
+      "token": "column",
+      "sector": "fintech"
+    },
+    {
+      "name": "Confluent",
+      "ats": "ashby",
+      "token": "confluent",
+      "sector": "saas"
+    },
+    {
+      "name": "Constructor",
+      "ats": "greenhouse",
+      "token": "constructortech",
+      "sector": "saas"
+    },
+    {
+      "name": "Contentful",
+      "ats": "greenhouse",
+      "token": "contentful",
+      "sector": "saas"
+    },
+    {
+      "name": "CoreWeave",
+      "ats": "greenhouse",
+      "token": "coreweave",
+      "sector": "ai"
+    },
+    {
+      "name": "Coursera",
+      "ats": "greenhouse",
+      "token": "coursera",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Creatio",
+      "ats": "lever",
+      "token": "creatio",
+      "sector": "saas",
+      "region": "eu"
+    },
+    {
+      "name": "Culture Amp",
+      "ats": "greenhouse",
+      "token": "cultureamp",
+      "sector": "saas"
+    },
+    {
+      "name": "Current",
+      "ats": "greenhouse",
+      "token": "current",
+      "sector": "fintech"
+    },
+    {
+      "name": "Cursor",
+      "ats": "ashby",
+      "token": "cursor",
+      "sector": "ai"
+    },
+    {
+      "name": "Customer.io",
+      "ats": "greenhouse",
+      "token": "customerio",
+      "sector": "saas"
+    },
+    {
+      "name": "Databricks",
+      "ats": "greenhouse",
+      "token": "databricks",
+      "sector": "ai"
+    },
+    {
+      "name": "Datadog",
+      "ats": "greenhouse",
+      "token": "datadog",
+      "sector": "saas"
+    },
+    {
+      "name": "Dave",
+      "ats": "ashby",
+      "token": "dave",
+      "sector": "fintech"
+    },
+    {
+      "name": "Deepgram",
+      "ats": "ashby",
+      "token": "deepgram",
+      "sector": "ai"
+    },
+    {
+      "name": "Demandbase",
+      "ats": "ashby",
+      "token": "demandbase",
+      "sector": "saas"
+    },
+    {
+      "name": "Descript",
+      "ats": "greenhouse",
+      "token": "descript",
+      "sector": "ai"
+    },
+    {
+      "name": "Discord",
+      "ats": "greenhouse",
+      "token": "discord",
+      "sector": "saas"
+    },
+    {
+      "name": "dLocal",
+      "ats": "lever",
+      "token": "dlocal",
+      "sector": "fintech"
+    },
+    {
+      "name": "Docker",
+      "ats": "ashby",
+      "token": "docker",
+      "sector": "saas"
+    },
+    {
+      "name": "Dropbox",
+      "ats": "greenhouse",
+      "token": "dropbox",
+      "sector": "saas"
+    },
+    {
+      "name": "Duolingo",
+      "ats": "greenhouse",
+      "token": "duolingo",
+      "sector": "saas"
+    },
+    {
+      "name": "Dwolla",
+      "ats": "lever",
+      "token": "dwolla",
+      "sector": "fintech"
+    },
+    {
+      "name": "Elastic",
+      "ats": "greenhouse",
+      "token": "elastic",
+      "sector": "saas"
+    },
+    {
+      "name": "ElevenLabs",
+      "ats": "ashby",
+      "token": "ElevenLabs",
+      "sector": "ai"
+    },
+    {
+      "name": "Entrata",
+      "ats": "lever",
+      "token": "entrata",
+      "sector": "saas"
+    },
+    {
+      "name": "Epic Games",
+      "ats": "greenhouse",
+      "token": "epicgames",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Faire",
+      "ats": "greenhouse",
+      "token": "faire",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Fastly",
+      "ats": "greenhouse",
+      "token": "fastly",
+      "sector": "saas"
+    },
+    {
+      "name": "FastSpring",
+      "ats": "greenhouse",
+      "token": "fastspring",
+      "sector": "fintech"
+    },
+    {
+      "name": "Feedzai",
+      "ats": "greenhouse",
+      "token": "feedzai",
+      "sector": "fintech"
+    },
+    {
+      "name": "Figma",
+      "ats": "greenhouse",
+      "token": "figma",
+      "sector": "saas"
+    },
+    {
+      "name": "Filevine",
+      "ats": "lever",
+      "token": "filevine",
+      "sector": "saas"
+    },
+    {
+      "name": "Finch",
+      "ats": "lever",
+      "token": "finch",
+      "sector": "fintech"
+    },
+    {
+      "name": "Fireblocks",
+      "ats": "greenhouse",
+      "token": "fireblocks",
+      "sector": "fintech"
+    },
+    {
+      "name": "FiscalNote",
+      "ats": "lever",
+      "token": "fiscalnote",
+      "sector": "saas"
+    },
+    {
+      "name": "Fivetran",
+      "ats": "greenhouse",
+      "token": "fivetran",
+      "sector": "saas"
+    },
+    {
+      "name": "Flexe",
+      "ats": "greenhouse",
+      "token": "flexe",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Flexport",
+      "ats": "greenhouse",
+      "token": "flexport",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Forter",
+      "ats": "greenhouse",
+      "token": "forter",
+      "sector": "fintech"
+    },
+    {
+      "name": "FullStory",
+      "ats": "ashby",
+      "token": "fullstory",
+      "sector": "saas"
+    },
+    {
+      "name": "Fundrise",
+      "ats": "lever",
+      "token": "fundrise",
+      "sector": "fintech"
+    },
+    {
+      "name": "Gainsight",
+      "ats": "ashby",
+      "token": "gainsight",
+      "sector": "saas"
+    },
+    {
+      "name": "Gamma",
+      "ats": "ashby",
+      "token": "gamma",
+      "sector": "saas"
+    },
+    {
+      "name": "Gemini",
+      "ats": "greenhouse",
+      "token": "gemini",
+      "sector": "fintech"
+    },
+    {
+      "name": "Ghost",
+      "ats": "greenhouse",
+      "token": "ghost",
+      "sector": "saas"
+    },
+    {
+      "name": "GitLab",
+      "ats": "greenhouse",
+      "token": "gitlab",
+      "sector": "saas"
+    },
+    {
+      "name": "GOAT",
+      "ats": "greenhouse",
+      "token": "goatgroup",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Gong",
+      "ats": "greenhouse",
+      "token": "gongio",
+      "sector": "saas"
+    },
+    {
+      "name": "Gorgias",
+      "ats": "ashby",
+      "token": "gorgias",
+      "sector": "saas"
+    },
+    {
+      "name": "Grafana Labs",
+      "ats": "greenhouse",
+      "token": "grafanalabs",
+      "sector": "saas"
+    },
+    {
+      "name": "Greenhouse",
+      "ats": "greenhouse",
+      "token": "greenhouse",
+      "sector": "saas"
+    },
+    {
+      "name": "Greenlight",
+      "ats": "lever",
+      "token": "greenlight",
+      "sector": "fintech"
+    },
+    {
+      "name": "Gusto",
+      "ats": "greenhouse",
+      "token": "gusto",
+      "sector": "fintech"
+    },
+    {
+      "name": "Harvey",
+      "ats": "ashby",
+      "token": "harvey",
+      "sector": "ai"
+    },
+    {
+      "name": "Help Scout",
+      "ats": "ashby",
+      "token": "helpscout",
+      "sector": "saas"
+    },
+    {
+      "name": "Hex",
+      "ats": "ashby",
+      "token": "hex",
+      "sector": "saas"
+    },
+    {
+      "name": "Highnote",
+      "ats": "greenhouse",
+      "token": "highnote",
+      "sector": "fintech"
+    },
+    {
+      "name": "Hightouch",
+      "ats": "ashby",
+      "token": "hightouch",
+      "sector": "saas"
+    },
+    {
+      "name": "HomeLight",
+      "ats": "greenhouse",
+      "token": "homelight",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Honeycomb",
+      "ats": "greenhouse",
+      "token": "honeycomb",
+      "sector": "saas"
+    },
+    {
+      "name": "Hopper",
+      "ats": "ashby",
+      "token": "hopper",
+      "sector": "marketplace"
+    },
+    {
+      "name": "HubSpot",
+      "ats": "greenhouse",
+      "token": "hubspotjobs",
+      "sector": "saas"
+    },
+    {
+      "name": "Immuta",
+      "ats": "lever",
+      "token": "immuta",
+      "sector": "saas"
+    },
+    {
+      "name": "Instacart",
+      "ats": "greenhouse",
+      "token": "instacart",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Intercom",
+      "ats": "greenhouse",
+      "token": "intercom",
+      "sector": "saas"
+    },
+    {
+      "name": "Iterable",
+      "ats": "ashby",
+      "token": "iterable",
+      "sector": "saas"
+    },
+    {
+      "name": "Jobber",
+      "ats": "ashby",
+      "token": "jobber",
+      "sector": "saas"
+    },
+    {
+      "name": "JumpCloud",
+      "ats": "lever",
+      "token": "jumpcloud",
+      "sector": "saas"
+    },
+    {
+      "name": "Justworks",
+      "ats": "greenhouse",
+      "token": "justworks",
+      "sector": "fintech"
+    },
+    {
+      "name": "Klaviyo",
+      "ats": "greenhouse",
+      "token": "klaviyo",
+      "sector": "saas"
+    },
+    {
+      "name": "Labelbox",
+      "ats": "greenhouse",
+      "token": "labelbox",
+      "sector": "ai"
+    },
+    {
+      "name": "Lattice",
+      "ats": "greenhouse",
+      "token": "lattice",
+      "sector": "saas"
+    },
+    {
+      "name": "LaunchDarkly",
+      "ats": "greenhouse",
+      "token": "launchdarkly",
+      "sector": "saas"
+    },
+    {
+      "name": "Lightspeed",
+      "ats": "ashby",
+      "token": "lightspeedhq",
+      "sector": "saas"
+    },
+    {
+      "name": "Linear",
+      "ats": "ashby",
+      "token": "Linear",
+      "sector": "saas"
+    },
+    {
+      "name": "Lithic",
+      "ats": "greenhouse",
+      "token": "lithic",
+      "sector": "fintech"
+    },
+    {
+      "name": "Loadsmart",
+      "ats": "lever",
+      "token": "loadsmart",
+      "sector": "marketplace"
+    },
+    {
+      "name": "LogRocket",
+      "ats": "lever",
+      "token": "logrocket",
+      "sector": "saas"
+    },
+    {
+      "name": "Lyft",
+      "ats": "greenhouse",
+      "token": "lyft",
+      "sector": "marketplace"
+    },
+    {
+      "name": "MasterClass",
+      "ats": "greenhouse",
+      "token": "masterclass",
+      "sector": "saas"
+    },
+    {
+      "name": "Melio",
+      "ats": "greenhouse",
+      "token": "melio",
+      "sector": "fintech"
+    },
+    {
+      "name": "Mercari",
+      "ats": "greenhouse",
+      "token": "mercari",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Mercury",
+      "ats": "greenhouse",
+      "token": "mercury",
+      "sector": "fintech"
+    },
+    {
+      "name": "Middesk",
+      "ats": "ashby",
+      "token": "middesk",
+      "sector": "fintech"
+    },
+    {
+      "name": "Mindbody",
+      "ats": "greenhouse",
+      "token": "mindbody",
+      "sector": "saas"
+    },
+    {
+      "name": "Miro",
+      "ats": "ashby",
+      "token": "miro",
+      "sector": "saas"
+    },
+    {
+      "name": "Mixpanel",
+      "ats": "greenhouse",
+      "token": "mixpanel",
+      "sector": "saas"
+    },
+    {
+      "name": "Modal",
+      "ats": "ashby",
+      "token": "modal",
+      "sector": "ai"
+    },
+    {
+      "name": "Modern Treasury",
+      "ats": "ashby",
+      "token": "moderntreasury",
+      "sector": "fintech"
+    },
+    {
+      "name": "Mollie",
+      "ats": "ashby",
+      "token": "mollie",
+      "sector": "fintech"
+    },
+    {
+      "name": "MongoDB",
+      "ats": "greenhouse",
+      "token": "mongodb",
+      "sector": "saas"
+    },
+    {
+      "name": "Monzo",
+      "ats": "greenhouse",
+      "token": "monzo",
+      "sector": "fintech"
+    },
+    {
+      "name": "Motive",
+      "ats": "greenhouse",
+      "token": "gomotive",
+      "sector": "saas"
+    },
+    {
+      "name": "Mutiny",
+      "ats": "ashby",
+      "token": "mutiny",
+      "sector": "saas"
+    },
+    {
+      "name": "Navan",
+      "ats": "greenhouse",
+      "token": "tripactions",
+      "sector": "saas"
+    },
+    {
+      "name": "NerdWallet",
+      "ats": "ashby",
+      "token": "nerdwallet",
+      "sector": "fintech"
+    },
+    {
+      "name": "Netlify",
+      "ats": "greenhouse",
+      "token": "netlify",
+      "sector": "saas"
+    },
+    {
+      "name": "New Relic",
+      "ats": "greenhouse",
+      "token": "newrelic",
+      "sector": "saas"
+    },
+    {
+      "name": "Nextdoor",
+      "ats": "greenhouse",
+      "token": "nextdoor",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Notion",
+      "ats": "ashby",
+      "token": "notion",
+      "sector": "saas"
+    },
+    {
+      "name": "Novo",
+      "ats": "ashby",
+      "token": "novo",
+      "sector": "fintech"
+    },
+    {
+      "name": "Nubank",
+      "ats": "ashby",
+      "token": "nubank",
+      "sector": "fintech"
+    },
+    {
+      "name": "OfferUp",
+      "ats": "greenhouse",
+      "token": "offerup",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Okta",
+      "ats": "greenhouse",
+      "token": "okta",
+      "sector": "saas"
+    },
+    {
+      "name": "OLX",
+      "ats": "lever",
+      "token": "olx",
+      "sector": "marketplace",
+      "region": "eu"
+    },
+    {
+      "name": "OpenAI",
+      "ats": "ashby",
+      "token": "openai",
+      "sector": "ai"
+    },
+    {
+      "name": "OpenSea",
+      "ats": "ashby",
+      "token": "OpenSea",
+      "sector": "marketplace"
+    },
+    {
+      "name": "OpenTable",
+      "ats": "greenhouse",
+      "token": "opentable",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Orca Security",
+      "ats": "greenhouse",
+      "token": "orcasecurity",
+      "sector": "saas"
+    },
+    {
+      "name": "Orchard",
+      "ats": "greenhouse",
+      "token": "orchard",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Outreach",
+      "ats": "lever",
+      "token": "outreach",
+      "sector": "saas"
+    },
+    {
+      "name": "Owner.com",
+      "ats": "ashby",
+      "token": "owner",
+      "sector": "saas"
+    },
+    {
+      "name": "PagerDuty",
+      "ats": "greenhouse",
+      "token": "pagerduty",
+      "sector": "saas"
+    },
+    {
+      "name": "Palantir",
+      "ats": "lever",
+      "token": "palantir",
+      "sector": "saas"
+    },
+    {
+      "name": "Parafin",
+      "ats": "ashby",
+      "token": "parafin",
+      "sector": "fintech"
+    },
+    {
+      "name": "Patreon",
+      "ats": "ashby",
+      "token": "patreon",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Pattern",
+      "ats": "lever",
+      "token": "pattern",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Paxos",
+      "ats": "ashby",
+      "token": "paxos",
+      "sector": "fintech"
+    },
+    {
+      "name": "Payoneer",
+      "ats": "greenhouse",
+      "token": "payoneer",
+      "sector": "fintech"
+    },
+    {
+      "name": "Paystand",
+      "ats": "greenhouse",
+      "token": "paystand",
+      "sector": "fintech"
+    },
+    {
+      "name": "Pendo",
+      "ats": "greenhouse",
+      "token": "pendo",
+      "sector": "saas"
+    },
+    {
+      "name": "Perplexity",
+      "ats": "ashby",
+      "token": "perplexity",
+      "sector": "ai"
+    },
+    {
+      "name": "Persona",
+      "ats": "ashby",
+      "token": "persona",
+      "sector": "fintech"
+    },
+    {
+      "name": "Photoroom",
+      "ats": "ashby",
+      "token": "photoroom",
+      "sector": "ai"
+    },
+    {
+      "name": "Pinterest",
+      "ats": "greenhouse",
+      "token": "pinterest",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Plaid",
+      "ats": "ashby",
+      "token": "plaid",
+      "sector": "fintech"
+    },
+    {
+      "name": "PlanetScale",
+      "ats": "greenhouse",
+      "token": "planetscale",
+      "sector": "saas"
+    },
+    {
+      "name": "Poshmark",
+      "ats": "ashby",
+      "token": "poshmark",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Postscript",
+      "ats": "greenhouse",
+      "token": "postscript",
+      "sector": "saas"
+    },
+    {
+      "name": "project44",
+      "ats": "greenhouse",
+      "token": "project44",
+      "sector": "saas"
+    },
+    {
+      "name": "Public",
+      "ats": "greenhouse",
+      "token": "public",
+      "sector": "fintech"
+    },
+    {
+      "name": "Pulumi",
+      "ats": "greenhouse",
+      "token": "pulumicorporation",
+      "sector": "saas"
+    },
+    {
+      "name": "Qualia",
+      "ats": "greenhouse",
+      "token": "qualia",
+      "sector": "saas"
+    },
+    {
+      "name": "Railway",
+      "ats": "ashby",
+      "token": "railway",
+      "sector": "saas"
+    },
+    {
+      "name": "Ramp",
+      "ats": "ashby",
+      "token": "ramp",
+      "sector": "fintech"
+    },
+    {
+      "name": "Recharge",
+      "ats": "ashby",
+      "token": "recharge",
+      "sector": "saas"
+    },
+    {
+      "name": "Reddit",
+      "ats": "greenhouse",
+      "token": "reddit",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Render",
+      "ats": "ashby",
+      "token": "render",
+      "sector": "saas"
+    },
+    {
+      "name": "Rho",
+      "ats": "ashby",
+      "token": "rho",
+      "sector": "fintech"
+    },
+    {
+      "name": "Riot Games",
+      "ats": "greenhouse",
+      "token": "riotgames",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Ripple",
+      "ats": "greenhouse",
+      "token": "ripple",
+      "sector": "fintech"
+    },
+    {
+      "name": "Riskified",
+      "ats": "greenhouse",
+      "token": "riskified",
+      "sector": "fintech"
+    },
+    {
+      "name": "Robinhood",
+      "ats": "greenhouse",
+      "token": "robinhood",
+      "sector": "fintech"
+    },
+    {
+      "name": "Roblox",
+      "ats": "greenhouse",
+      "token": "roblox",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Runway",
+      "ats": "ashby",
+      "token": "runway-ml",
+      "sector": "ai"
+    },
+    {
+      "name": "Salesloft",
+      "ats": "greenhouse",
+      "token": "salesloft",
+      "sector": "saas"
+    },
+    {
+      "name": "Samsara",
+      "ats": "greenhouse",
+      "token": "samsara",
+      "sector": "saas"
+    },
+    {
+      "name": "Sanity",
+      "ats": "ashby",
+      "token": "sanity",
+      "sector": "saas"
+    },
+    {
+      "name": "Sardine",
+      "ats": "ashby",
+      "token": "sardine",
+      "sector": "fintech"
+    },
+    {
+      "name": "Scale AI",
+      "ats": "greenhouse",
+      "token": "scaleai",
+      "sector": "ai"
+    },
+    {
+      "name": "Scopely",
+      "ats": "greenhouse",
+      "token": "scopely",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Secureframe",
+      "ats": "lever",
+      "token": "secureframe",
+      "sector": "saas"
+    },
+    {
+      "name": "Sendbird",
+      "ats": "greenhouse",
+      "token": "sendbird",
+      "sector": "saas"
+    },
+    {
+      "name": "Sentry",
+      "ats": "ashby",
+      "token": "sentry",
+      "sector": "saas"
+    },
+    {
+      "name": "Sezzle",
+      "ats": "greenhouse",
+      "token": "sezzle",
+      "sector": "fintech"
+    },
+    {
+      "name": "ShipBob",
+      "ats": "greenhouse",
+      "token": "shipbobinc",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Sift",
+      "ats": "ashby",
+      "token": "sift",
+      "sector": "fintech"
+    },
+    {
+      "name": "SingleStore",
+      "ats": "greenhouse",
+      "token": "singlestore",
+      "sector": "saas"
+    },
+    {
+      "name": "Slope",
+      "ats": "ashby",
+      "token": "slope",
+      "sector": "fintech"
+    },
+    {
+      "name": "Smartsheet",
+      "ats": "greenhouse",
+      "token": "smartsheet",
+      "sector": "saas"
+    },
+    {
+      "name": "Snapdocs",
+      "ats": "ashby",
+      "token": "snapdocs",
+      "sector": "saas"
+    },
+    {
+      "name": "Snowflake",
+      "ats": "ashby",
+      "token": "Snowflake",
+      "sector": "saas"
+    },
+    {
+      "name": "Socure",
+      "ats": "ashby",
+      "token": "socure",
+      "sector": "fintech"
+    },
+    {
+      "name": "SoFi",
+      "ats": "greenhouse",
+      "token": "sofi",
+      "sector": "fintech"
+    },
+    {
+      "name": "Sonatype",
+      "ats": "lever",
+      "token": "sonatype",
+      "sector": "saas"
+    },
+    {
+      "name": "Sourcegraph",
+      "ats": "greenhouse",
+      "token": "sourcegraph91",
+      "sector": "saas"
+    },
+    {
+      "name": "Spotify",
+      "ats": "lever",
+      "token": "spotify",
+      "sector": "marketplace"
+    },
+    {
+      "name": "SpotOn",
+      "ats": "ashby",
+      "token": "Spoton",
+      "sector": "saas"
+    },
+    {
+      "name": "Squarespace",
+      "ats": "greenhouse",
+      "token": "squarespace",
+      "sector": "saas"
+    },
+    {
+      "name": "Starburst",
+      "ats": "greenhouse",
+      "token": "starburst",
+      "sector": "saas"
+    },
+    {
+      "name": "StockX",
+      "ats": "greenhouse",
+      "token": "stockx",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Stripe",
+      "ats": "greenhouse",
+      "token": "stripe",
+      "sector": "fintech"
+    },
+    {
+      "name": "Stytch",
+      "ats": "ashby",
+      "token": "stytch",
+      "sector": "saas"
+    },
+    {
+      "name": "Substack",
+      "ats": "ashby",
+      "token": "substack",
+      "sector": "saas"
+    },
+    {
+      "name": "Sumo Logic",
+      "ats": "greenhouse",
+      "token": "sumologic",
+      "sector": "saas"
+    },
+    {
+      "name": "Supabase",
+      "ats": "ashby",
+      "token": "supabase",
+      "sector": "saas"
+    },
+    {
+      "name": "Synthesia",
+      "ats": "ashby",
+      "token": "synthesia",
+      "sector": "ai"
+    },
+    {
+      "name": "Sysdig",
+      "ats": "lever",
+      "token": "sysdig",
+      "sector": "saas"
+    },
+    {
+      "name": "Tailscale",
+      "ats": "greenhouse",
+      "token": "tailscale",
+      "sector": "saas"
+    },
+    {
+      "name": "Taskrabbit",
+      "ats": "greenhouse",
+      "token": "taskrabbit",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Thumbtack",
+      "ats": "ashby",
+      "token": "thumbtack",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Toast",
+      "ats": "greenhouse",
+      "token": "toast",
+      "sector": "fintech"
+    },
+    {
+      "name": "Together AI",
+      "ats": "greenhouse",
+      "token": "togetherai",
+      "sector": "ai"
+    },
+    {
+      "name": "Treasury Prime",
+      "ats": "greenhouse",
+      "token": "treasuryprime",
+      "sector": "fintech"
+    },
+    {
+      "name": "Tripadvisor",
+      "ats": "greenhouse",
+      "token": "tripadvisor",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Twilio",
+      "ats": "greenhouse",
+      "token": "twilio",
+      "sector": "saas"
+    },
+    {
+      "name": "Udemy",
+      "ats": "greenhouse",
+      "token": "udemy",
+      "sector": "marketplace"
+    },
+    {
+      "name": "Upgrade",
+      "ats": "greenhouse",
+      "token": "upgrade",
+      "sector": "fintech"
+    },
+    {
+      "name": "Upstart",
+      "ats": "greenhouse",
+      "token": "upstart",
+      "sector": "fintech"
+    },
+    {
+      "name": "Veeva",
+      "ats": "lever",
+      "token": "veeva",
+      "sector": "saas"
+    },
+    {
+      "name": "Vercel",
+      "ats": "greenhouse",
+      "token": "vercel",
+      "sector": "saas"
+    },
+    {
+      "name": "Very Good Security",
+      "ats": "lever",
+      "token": "verygoodsecurity",
+      "sector": "fintech"
+    },
+    {
+      "name": "Wayflyer",
+      "ats": "ashby",
+      "token": "wayflyer",
+      "sector": "fintech"
+    },
+    {
+      "name": "Wealthfront",
+      "ats": "lever",
+      "token": "wealthfront",
+      "sector": "fintech"
+    },
+    {
+      "name": "Webflow",
+      "ats": "greenhouse",
+      "token": "webflow",
+      "sector": "saas"
+    },
+    {
+      "name": "Wiz",
+      "ats": "greenhouse",
+      "token": "wizinc",
+      "sector": "saas"
+    },
+    {
+      "name": "WorkOS",
+      "ats": "ashby",
+      "token": "workos",
+      "sector": "saas"
+    },
+    {
+      "name": "Yotpo",
+      "ats": "greenhouse",
+      "token": "yotpo",
+      "sector": "saas"
+    },
+    {
+      "name": "Zeta",
+      "ats": "lever",
+      "token": "zeta",
+      "sector": "saas"
+    },
+    {
+      "name": "Zip",
+      "ats": "ashby",
+      "token": "zip",
+      "sector": "saas"
+    },
+    {
+      "name": "ZoomInfo",
+      "ats": "greenhouse",
+      "token": "zoominfo",
+      "sector": "saas"
+    }
+  ]
+}
