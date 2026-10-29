@@ -1,0 +1,17 @@
+{
+  "name": "pricingroles",
+  "private": true,
+  "type": "module",
+  "description": "PricingRoles — a static job board for pricing, monetization, and revenue strategy roles.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "ingest": "node scripts/ingest.js",
+    "build": "node scripts/build.js",
+    "refresh": "node scripts/ingest.js && node scripts/build.js",
+    "validate": "node scripts/validate.js",
+    "verify-boards": "node scripts/verify-boards.js",
+    "test": "node --test"
+  }
+}
