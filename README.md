@@ -52,7 +52,7 @@ A posting is kept when the title is a pricing, monetization, deal desk, revenue 
 - Category pages and remote, hybrid, and onsite landing pages
 - `sitemap.xml`, `robots.txt`, and a `CNAME` file containing `pricingroles.com`
 - A post-a-job page for a featured listing at **$99 for 30 days**. The form is marked TODO and does not submit anywhere
-- A weekly new-roles signup block marked TODO for Beehiiv
+- A weekly new-roles signup embedded from Beehiiv
 - A short About page
 
 ## GitHub Pages

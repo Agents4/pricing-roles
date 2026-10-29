@@ -62,7 +62,8 @@ assert.doesNotMatch(about, /Agents\s*4/i);
 const post = await readFile(join(dist, "post-a-job", "index.html"), "utf8");
 assert.match(post, /\$99/);
 assert.match(post, /TODO: payments and the listing queue are not connected/);
-assert.match(about + post + home, /TODO: Beehiiv/);
+assert.match(about + post + home, /<script async src="https:\/\/subscribe-forms\.beehiiv\.com\/v3\/loader\.js" data-beehiiv-form="cb38888b-7a0f-4b11-ad14-97c92b62b7a4"><\/script>/);
+assert.doesNotMatch(about + post + home, /#newsletter|newsletter-email|TODO: Beehiiv/);
 
 let checked = 0;
 for (const job of jobs) {

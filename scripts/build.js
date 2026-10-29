@@ -183,15 +183,7 @@ function footer(depth) {
       <div>
         <h2>New pricing roles, weekly</h2>
         <p>A short list of roles that opened this week. No essays.</p>
-        <form data-todo-form action="#newsletter">
-          <label for="newsletter-email">Email</label>
-          <div class="newsletter">
-            <input id="newsletter-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email">
-            <button type="submit">Get the list</button>
-          </div>
-          <p class="note" data-todo-status hidden>TODO: connect this signup to Beehiiv.</p>
-        </form>
-        <p class="fine">TODO: Beehiiv is not connected. Submitting does not add you to a list.</p>
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="cb38888b-7a0f-4b11-ad14-97c92b62b7a4"></script>
       </div>
     </div>
   </footer>`;
