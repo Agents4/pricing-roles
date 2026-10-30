@@ -44,14 +44,8 @@ export function employmentType(title) {
   if (/\b(contract|contractor)\b/i.test(title)) return "CONTRACTOR";
   if (/\bpart[-\s]?time\b/i.test(title)) return "PART_TIME";
   if (/\btemporary\b/i.test(title)) return "TEMPORARY";
-  return "FULL_TIME";
-}
-
-export function validThrough(postedAt, now = Date.now()) {
-  const posted = Date.parse(postedAt);
-  const end = posted + 60 * 24 * 60 * 60 * 1000;
-  const floor = now + 14 * 24 * 60 * 60 * 1000;
-  return new Date(Math.max(end, floor)).toISOString().slice(0, 10);
+  if (/\bfull[-\s]?time\b/i.test(title)) return "FULL_TIME";
+  return null;
 }
 
 function originOf(url) {
@@ -64,19 +58,18 @@ function originOf(url) {
 
 function postalAddress(job) {
   const country = detectCountry(job.location);
-  const loc = !job.location || job.location === "Unspecified" ? "" : job.location;
-  const parts = loc.split(",").map((part) => part.trim()).filter(Boolean);
+  const loc = !job.location || job.location === "Unspecified" ? "" : job.location.trim();
+  const parts = loc.split(",").map((part) => part.trim()).filter((part) => part && !/^remote$/i.test(part));
   const address = { "@type": "PostalAddress" };
   if (country) address.addressCountry = country;
   if (parts.length >= 2) {
     address.addressLocality = parts[0];
     address.addressRegion = parts[1];
-  } else if (parts.length === 1) {
+  } else if (parts.length === 1 && !/^remote\b/i.test(parts[0])) {
     address.addressLocality = parts[0];
-  } else {
-    address.addressLocality = job.workplace === "remote" ? "Remote" : "Unspecified";
   }
-  return { address, country };
+  const known = address.addressLocality || address.addressRegion || address.addressCountry;
+  return { address: known ? address : null, country };
 }
 
 export function schemaDescription(job) {
@@ -86,7 +79,7 @@ export function schemaDescription(job) {
   return text.slice(0, 5000);
 }
 
-export function jobPostingJsonLd(job, canonical, now = Date.now()) {
+export function jobPostingJsonLd(job, canonical) {
   const { address, country } = postalAddress(job);
   const category = categoryMeta(job.category);
   const posting = {
@@ -94,8 +87,7 @@ export function jobPostingJsonLd(job, canonical, now = Date.now()) {
     title: job.title,
     description: schemaDescription(job),
     datePosted: String(job.postedAt).slice(0, 10),
-    validThrough: validThrough(job.postedAt, now),
-    employmentType: employmentType(job.title),
+    directApply: false,
     hiringOrganization: {
       "@type": "Organization",
       name: job.company,
@@ -106,30 +98,30 @@ export function jobPostingJsonLd(job, canonical, now = Date.now()) {
       value: job.id,
     },
     url: canonical,
-    jobLocation: {
-      "@type": "Place",
-      address,
-    },
   };
+  const employment = employmentType(job.title);
+  if (employment) posting.employmentType = employment;
   const sameAs = originOf(job.applyUrl);
   if (sameAs) posting.hiringOrganization.sameAs = sameAs;
+  if (address) {
+    posting.jobLocation = { "@type": "Place", address };
+  }
   if (job.workplace === "remote") {
     posting.jobLocationType = "TELECOMMUTE";
     if (country) {
       posting.applicantLocationRequirements = { "@type": "Country", name: country };
     }
   }
-  if (job.salaryMin != null || job.salaryMax != null) {
-    const unit = { year: "YEAR", month: "MONTH", hour: "HOUR" }[job.salaryInterval] || "YEAR";
+  if ((job.salaryMin != null || job.salaryMax != null) && job.salaryCurrency) {
+    const unit = { year: "YEAR", month: "MONTH", hour: "HOUR" }[job.salaryInterval];
+    const value = { "@type": "QuantitativeValue" };
+    if (job.salaryMin != null) value.minValue = job.salaryMin;
+    if (job.salaryMax != null) value.maxValue = job.salaryMax;
+    if (unit) value.unitText = unit;
     posting.baseSalary = {
       "@type": "MonetaryAmount",
-      currency: job.salaryCurrency || "USD",
-      value: {
-        "@type": "QuantitativeValue",
-        minValue: job.salaryMin ?? job.salaryMax,
-        maxValue: job.salaryMax ?? job.salaryMin,
-        unitText: unit,
-      },
+      currency: job.salaryCurrency,
+      value,
     };
   }
   return {

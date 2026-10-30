@@ -3,7 +3,11 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { CATEGORIES, WORKPLACES, classifyTitle, isFresh } from "./lib/classify.js";
+import { detectCountry } from "./lib/schema.js";
 import { escapeHtml } from "./lib/text.js";
+
+const GA_SNIPPET = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-5N0MW5WC3N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5N0MW5WC3N');</script>`;
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const dist = join(root, "dist");
@@ -56,14 +60,17 @@ const home = await readFile(join(dist, "index.html"), "utf8");
 assert.match(home, /Pricing roles, without the noise/);
 assert.doesNotMatch(home, /Agents\s*4/i);
 assert.match(home, new RegExp(escapeRegExp(jobs[0].title)));
+assertAnalytics(home);
 
 const about = await readFile(join(dist, "about", "index.html"), "utf8");
 assert.doesNotMatch(about, /Agents\s*4/i);
+assertAnalytics(about);
 const post = await readFile(join(dist, "post-a-job", "index.html"), "utf8");
 assert.match(post, /\$99/);
 assert.match(post, /TODO: payments and the listing queue are not connected/);
 assert.match(about + post + home, /<script async src="https:\/\/subscribe-forms\.beehiiv\.com\/v3\/loader\.js" data-beehiiv-form="cb38888b-7a0f-4b11-ad14-97c92b62b7a4"><\/script>/);
 assert.doesNotMatch(about + post + home, /#newsletter|newsletter-email|TODO: Beehiiv/);
+assertAnalytics(post);
 
 let checked = 0;
 for (const job of jobs) {
@@ -73,18 +80,35 @@ for (const job of jobs) {
   assert.equal(json.title, job.title);
   assert.ok(json.description && json.description.length > 20);
   assert.match(json.datePosted, /^\d{4}-\d{2}-\d{2}$/);
-  assert.match(json.validThrough, /^\d{4}-\d{2}-\d{2}$/);
-  assert.ok(json.validThrough >= json.datePosted);
+  assert.equal(json.directApply, false);
   assert.equal(json.hiringOrganization["@type"], "Organization");
   assert.equal(json.hiringOrganization.name, job.company);
-  assert.equal(json.jobLocation["@type"], "Place");
-  assert.ok(json.jobLocation.address.addressLocality);
-  if (job.workplace === "remote") assert.equal(json.jobLocationType, "TELECOMMUTE");
-  if (job.salaryText) {
-    assert.equal(json.baseSalary["@type"], "MonetaryAmount");
-    assert.ok(json.baseSalary.value.minValue != null);
-    assert.ok(json.baseSalary.value.maxValue != null);
+  assert.equal(json.hiringOrganization.sameAs, new URL(job.applyUrl).origin);
+  if (json.validThrough) {
+    assert.match(json.validThrough, /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(json.validThrough >= json.datePosted);
   }
+  if (job.workplace === "remote") {
+    assert.equal(json.jobLocationType, "TELECOMMUTE");
+    const country = detectCountry(job.location);
+    if (country) assert.equal(json.applicantLocationRequirements?.name, country);
+  } else if (job.location && job.location !== "Unspecified") {
+    assert.equal(json.jobLocation["@type"], "Place");
+  }
+  if (json.jobLocation) {
+    assert.equal(json.jobLocation["@type"], "Place");
+    assert.ok(json.jobLocation.address.addressLocality || json.jobLocation.address.addressCountry);
+  }
+  const employment = employmentFromTitle(job.title);
+  if (employment) assert.equal(json.employmentType, employment);
+  else assert.equal(json.employmentType, undefined);
+  if (job.salaryText && job.salaryCurrency) {
+    assert.equal(json.baseSalary["@type"], "MonetaryAmount");
+    assert.equal(json.baseSalary.currency, job.salaryCurrency);
+    if (job.salaryMin != null) assert.equal(json.baseSalary.value.minValue, job.salaryMin);
+    if (job.salaryMax != null) assert.equal(json.baseSalary.value.maxValue, job.salaryMax);
+  }
+  assertAnalytics(html);
   assert.equal(json.url, `https://pricingroles.com/jobs/${job.slug}/`);
   assert.match(html, new RegExp(`href="${escapeRegExp(escapeHtml(job.applyUrl))}"`));
   checked += 1;
@@ -100,6 +124,19 @@ function extractJobPosting(html) {
   const posting = graph.find((node) => node["@type"] === "JobPosting");
   assert.ok(posting, "missing JobPosting");
   return posting;
+}
+
+function assertAnalytics(html) {
+  assert.ok(html.includes(GA_SNIPPET), "missing GA4 snippet");
+}
+
+function employmentFromTitle(title) {
+  if (/\bintern\b/i.test(title)) return "INTERN";
+  if (/\b(contract|contractor)\b/i.test(title)) return "CONTRACTOR";
+  if (/\bpart[-\s]?time\b/i.test(title)) return "PART_TIME";
+  if (/\btemporary\b/i.test(title)) return "TEMPORARY";
+  if (/\bfull[-\s]?time\b/i.test(title)) return "FULL_TIME";
+  return null;
 }
 
 function escapeRegExp(value) {

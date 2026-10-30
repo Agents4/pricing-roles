@@ -41,7 +41,7 @@ Company board tokens live in `data/companies.json`. Each entry is a public board
 
 Only those public job-board APIs are called. There is no login and no private API key.
 
-A posting is kept when the title is a pricing, monetization, deal desk, revenue management, yield management, or packaging role, it was posted within 60 days, and it is not a known false positive (retail pricing clerk, generic sales “revenue” role, software engineer on a monetization team, physical packaging operations, and similar). Duplicates with the same apply URL, or the same company, title, location, and workplace, collapse to the newest posting.
+A posting is kept when the title is a pricing, monetization, deal desk, revenue management, yield management, or packaging role, including hospitality revenue titles such as revenue manager, yield analyst, commercial revenue, network and revenue, and revenue analyst when the title is hospitality or revenue-management work. It has to have been posted within 60 days, and it is not a known false positive (retail pricing clerk, generic revenue analyst, revenue accountant, revenue operations, generic sales “revenue” role, software engineer on a monetization team, physical packaging operations, and similar). Duplicates with the same apply URL, or the same company, title, location, and workplace, collapse to the newest posting.
 
 `data/jobs.json` is the generated snapshot the site builds from. It is committed so the board can be rebuilt without a network call.
 
