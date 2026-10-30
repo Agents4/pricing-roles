@@ -1,4 +1,5 @@
 import { request as httpsRequest } from "node:https";
+import { oracleLooksLive, oracleProbeUrl } from "./oracle.js";
 import { workdayLooksLive, workdaySearchUrl } from "./workday.js";
 
 const USER_AGENT = "PricingRoles/1.0 (+https://pricingroles.com)";
@@ -201,6 +202,7 @@ export function boardUrl(company) {
     return `https://api.ashbyhq.com/posting-api/job-board/${token}?includeCompensation=true`;
   }
   if (company.ats === "workday") return workdaySearchUrl(company);
+  if (company.ats === "oracle") return oracleProbeUrl(company);
   throw new Error(`Unknown ATS: ${company.ats}`);
 }
 
@@ -213,5 +215,6 @@ export function boardLooksLive(company, status, prefix) {
     return text.startsWith("{") && (/"jobs"\s*:/.test(text) || /"apiVersion"\s*:/.test(text));
   }
   if (company.ats === "workday") return workdayLooksLive(status, text);
+  if (company.ats === "oracle") return oracleLooksLive(status, text);
   return false;
 }

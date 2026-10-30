@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "Keyword": "pricing",
+      "Offset": 0,
+      "Limit": 25,
+      "TotalJobsCount": 30,
+      "SiteNumber": "CX",
+      "requisitionList": [
+        {
+          "Id": "26142051",
+          "Title": "Senior Director, Pricing Analytics",
+          "PostedDate": "2026-10-23",
+          "PrimaryLocation": "Bethesda, MD, United States",
+          "PrimaryLocationCountry": "US",
+          "WorkplaceType": "Hybrid",
+          "WorkplaceTypeCode": "ORA_HYBRID",
+          "ShortDescriptionStr": "Leads enterprise pricing analytics.",
+          "secondaryLocations": [
+            { "Name": "Austin, TX, United States", "CountryCode": "US" }
+          ]
+        },
+        {
+          "Id": "100",
+          "Title": "Software Engineer, Pricing Platform",
+          "PostedDate": "2026-10-28",
+          "PrimaryLocation": "Austin, TX, United States",
+          "PrimaryLocationCountry": "US",
+          "WorkplaceType": "On-site",
+          "WorkplaceTypeCode": "ORA_ON_SITE",
+          "secondaryLocations": []
+        }
+      ]
+    }
+  ]
+}

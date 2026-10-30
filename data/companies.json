@@ -683,6 +683,14 @@
       "sector": "saas"
     },
     {
+      "name": "Hertz",
+      "ats": "oracle",
+      "token": "hertz",
+      "host": "fa-evlf-saasfaprod1.fa.ocs.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "travel"
+    },
+    {
       "name": "Hex",
       "ats": "ashby",
       "token": "hex",
@@ -699,6 +707,14 @@
       "ats": "ashby",
       "token": "hightouch",
       "sector": "saas"
+    },
+    {
+      "name": "Hilton",
+      "ats": "oracle",
+      "token": "hilton",
+      "host": "efet.fa.us2.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "travel"
     },
     {
       "name": "HomeLight",
@@ -723,6 +739,14 @@
       "ats": "greenhouse",
       "token": "hubspotjobs",
       "sector": "saas"
+    },
+    {
+      "name": "IHG",
+      "ats": "oracle",
+      "token": "ihg",
+      "host": "fa-evax-saasfaprod1.fa.ocs.oraclecloud.com",
+      "site": "CX_1001",
+      "sector": "travel"
     },
     {
       "name": "Immuta",
@@ -843,6 +867,14 @@
       "ats": "greenhouse",
       "token": "lyft",
       "sector": "marketplace"
+    },
+    {
+      "name": "Marriott",
+      "ats": "oracle",
+      "token": "marriott",
+      "host": "ejwl.fa.us2.oraclecloud.com",
+      "site": "CX",
+      "sector": "travel"
     },
     {
       "name": "MasterClass",
