@@ -3,6 +3,7 @@ import { boardUrl, fetchJson, mapPool, sleep } from "./lib/http.js";
 import { buildJob, assignSlugs, dedupeJobs } from "./lib/jobs.js";
 import { classifyTitle } from "./lib/classify.js";
 import { htmlToText } from "./lib/text.js";
+import { ingestOracle } from "./lib/oracle.js";
 import { ingestWorkday } from "./lib/workday.js";
 import {
   emptySalary,
@@ -17,11 +18,13 @@ const jobsPath = new URL("../data/jobs.json", import.meta.url);
 const { companies } = JSON.parse(await readFile(companiesPath, "utf8"));
 const now = Date.now();
 
+const oracleCompanies = companies.filter((company) => company.ats === "oracle");
 const workdayCompanies = companies.filter((company) => company.ats === "workday");
-const otherCompanies = companies.filter((company) => company.ats !== "workday");
+const otherCompanies = companies.filter((company) => company.ats !== "workday" && company.ats !== "oracle");
 const results = [
   ...(await mapPool(otherCompanies, 6, (company) => ingestCompany(company, now))),
   ...(await mapPool(workdayCompanies, 2, (company) => ingestCompany(company, now))),
+  ...(await mapPool(oracleCompanies, 2, (company) => ingestCompany(company, now))),
 ];
 
 const jobs = [];
@@ -61,6 +64,7 @@ async function ingestCompany(company, nowMs) {
     else if (company.ats === "lever") result = await ingestLever(company, nowMs);
     else if (company.ats === "ashby") result = await ingestAshby(company, nowMs);
     else if (company.ats === "workday") result = await ingestWorkday(company, nowMs, { fetchJson, sleep, mapPool });
+    else if (company.ats === "oracle") result = await ingestOracle(company, nowMs, { fetchJson, sleep, mapPool });
     else result = { company, error: `Unknown ATS ${company.ats}`, jobs: [] };
     if (result.error) {
       console.error(`FAIL ${company.name} (${company.ats}:${company.token}): ${result.error}`);

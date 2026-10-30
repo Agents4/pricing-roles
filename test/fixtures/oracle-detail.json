@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "Id": "26142051",
+      "Title": "Senior Director, Pricing Analytics",
+      "ExternalPostedStartDate": "2026-10-23T15:04:00+00:00",
+      "PrimaryLocation": "Bethesda, MD, United States",
+      "PrimaryLocationCountry": "US",
+      "WorkplaceType": "Hybrid",
+      "WorkplaceTypeCode": "ORA_HYBRID",
+      "ExternalDescriptionStr": "<p>Leads enterprise pricing analytics.</p><p>The annual salary range is $180,000 - $240,000 per year.</p>",
+      "ExternalResponsibilitiesStr": "<p>Owns price architecture.</p>",
+      "ExternalQualificationsStr": "<p>Experience in hospitality pricing.</p>",
+      "secondaryLocations": [
+        { "Name": "Austin, TX, United States", "CountryCode": "US" }
+      ],
+      "requisitionFlexFields": [
+        { "Prompt": "Bonus Eligible?", "Value": "Y" },
+        { "Prompt": "Pay Range", "Value": "$19.00 per hour" }
+      ]
+    }
+  ]
+}
