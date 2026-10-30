@@ -127,6 +127,15 @@
       "sector": "saas"
     },
     {
+      "name": "Avis Budget Group",
+      "ats": "workday",
+      "token": "avisbudget",
+      "tenant": "avisbudget",
+      "wd": "wd1",
+      "site": "ABG_Careers",
+      "sector": "travel"
+    },
+    {
       "name": "Baseten",
       "ats": "ashby",
       "token": "baseten",
@@ -233,6 +242,15 @@
       "ats": "greenhouse",
       "token": "chime",
       "sector": "fintech"
+    },
+    {
+      "name": "Choice Hotels",
+      "ats": "workday",
+      "token": "choicehotels",
+      "tenant": "choicehotels",
+      "wd": "wd5",
+      "site": "External",
+      "sector": "travel"
     },
     {
       "name": "CircleCI",
@@ -468,6 +486,15 @@
       "ats": "greenhouse",
       "token": "epicgames",
       "sector": "marketplace"
+    },
+    {
+      "name": "Expedia Group",
+      "ats": "workday",
+      "token": "expedia",
+      "tenant": "expedia",
+      "wd": "wd108",
+      "site": "search",
+      "sector": "travel"
     },
     {
       "name": "Faire",
@@ -944,6 +971,15 @@
       "sector": "marketplace"
     },
     {
+      "name": "Norwegian Cruise Line",
+      "ats": "workday",
+      "token": "nclh",
+      "tenant": "nclh",
+      "wd": "wd108",
+      "site": "NCL_Shoreside_Careers",
+      "sector": "travel"
+    },
+    {
       "name": "Notion",
       "ats": "ashby",
       "token": "notion",
@@ -1375,6 +1411,15 @@
       "ats": "greenhouse",
       "token": "sourcegraph91",
       "sector": "saas"
+    },
+    {
+      "name": "Southwest Airlines",
+      "ats": "workday",
+      "token": "swa",
+      "tenant": "swa",
+      "wd": "wd1",
+      "site": "external",
+      "sector": "travel"
     },
     {
       "name": "Spotify",

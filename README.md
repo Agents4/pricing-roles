@@ -1,6 +1,6 @@
 # PricingRoles
 
-PricingRoles is a static job board for pricing, monetization, deal desk, packaging, and revenue strategy roles. Listings are read from public Greenhouse, Lever, and Ashby job boards and link straight to the company’s own posting.
+PricingRoles is a static job board for pricing, monetization, deal desk, packaging, and revenue strategy roles. Listings are read from public Greenhouse, Lever, Ashby, and Workday job boards and link straight to the company’s own posting.
 
 The site is meant to be served at [pricingroles.com](https://pricingroles.com). Nothing in this repository assumes that DNS is already pointed here.
 
@@ -38,10 +38,11 @@ Company board tokens live in `data/companies.json`. Each entry is a public board
 | Greenhouse | `https://boards-api.greenhouse.io/v1/boards/{token}/jobs`, then `https://boards-api.greenhouse.io/v1/boards/{token}/jobs/{id}?pay_transparency=true` for each title match (posting content, publish date, and pay range) |
 | Lever | `https://api.lever.co/v0/postings/{company}?mode=json` (EU boards use `api.eu.lever.co`) |
 | Ashby | `https://api.ashbyhq.com/posting-api/job-board/{name}?includeCompensation=true` |
+| Workday | `POST https://{tenant}.{wd}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs` with `searchText` (`pricing`, `revenue management`, `yield`, `revenue manager`), `limit` 20, and `offset`. At most 3 pages per search. Each title match is then read with `GET .../wday/cxs/{tenant}/{site}{externalPath}`. |
 
-Only those public job-board APIs are called. There is no login and no private API key.
+A Workday company needs `tenant`, `wd` (the `wdN` host), and `site`, plus the usual `token`. Only those public job-board APIs are called. There is no login and no private API key. Workday requests run two companies at a time, with a short pause and the same retry backoff as the other boards.
 
-A posting is kept when the title is a pricing, monetization, deal desk, revenue management, yield management, or packaging role, including hospitality revenue titles such as revenue manager, yield analyst, commercial revenue, network and revenue, and revenue analyst when the title is hospitality or revenue-management work. It has to have been posted within 60 days, and it is not a known false positive (retail pricing clerk, generic revenue analyst, revenue accountant, revenue operations, generic sales “revenue” role, software engineer on a monetization team, physical packaging operations, and similar). Duplicates with the same apply URL, or the same company, title, location, and workplace, collapse to the newest posting.
+A posting is kept when the title is a pricing, monetization, deal desk, revenue management, yield management, or packaging role, including hospitality revenue titles such as revenue manager, yield analyst, commercial revenue, network and revenue, revenue strategy, rev strategy, and revenue forecasting, plus revenue analyst when the title is hospitality or revenue-management work. It has to have been posted within 60 days, and it is not a known false positive (retail pricing clerk, generic revenue analyst, revenue accountant, revenue operations, generic sales “revenue” role, software engineer on a monetization team, physical packaging operations, and similar). Duplicates with the same apply URL, or the same company, title, location, and workplace, collapse to the newest posting.
 
 `data/jobs.json` is the generated snapshot the site builds from. It is committed so the board can be rebuilt without a network call.
 

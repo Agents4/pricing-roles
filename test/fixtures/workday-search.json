@@ -1,0 +1,19 @@
+{
+  "total": 25,
+  "jobPostings": [
+    {
+      "title": "Senior Director, Pricing Analytics",
+      "externalPath": "/job/FieldRemote/Senior-Director--Pricing-Analytics_R22384-1",
+      "locationsText": "Field/Remote",
+      "postedOn": "Posted 7 Days Ago",
+      "bulletFields": ["R22384"]
+    },
+    {
+      "title": "Software Engineer, Pricing Platform",
+      "externalPath": "/job/Austin/Software-Engineer--Pricing-Platform_R100",
+      "locationsText": "Austin, TX",
+      "postedOn": "Posted 2 Days Ago",
+      "bulletFields": ["R100"]
+    }
+  ]
+}
