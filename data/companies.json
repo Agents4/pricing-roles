@@ -13,6 +13,15 @@
       "sector": "saas"
     },
     {
+      "name": "Abbott",
+      "ats": "workday",
+      "token": "abbott",
+      "tenant": "abbott",
+      "wd": "wd5",
+      "site": "abbottcareers",
+      "sector": "healthcare"
+    },
+    {
       "name": "Acorns",
       "ats": "ashby",
       "token": "acorns",
@@ -83,6 +92,15 @@
       "ats": "greenhouse",
       "token": "alloy",
       "sector": "fintech"
+    },
+    {
+      "name": "Amgen",
+      "ats": "workday",
+      "token": "amgen",
+      "tenant": "amgen",
+      "wd": "wd1",
+      "site": "Careers",
+      "sector": "healthcare"
     },
     {
       "name": "Amplitude",
@@ -226,6 +244,15 @@
       "sector": "fintech"
     },
     {
+      "name": "Capital One",
+      "ats": "workday",
+      "token": "capitalone",
+      "tenant": "capitalone",
+      "wd": "wd12",
+      "site": "Capital_One",
+      "sector": "fintech"
+    },
+    {
       "name": "Carta",
       "ats": "greenhouse",
       "token": "carta",
@@ -257,6 +284,15 @@
       "ats": "greenhouse",
       "token": "circleci",
       "sector": "saas"
+    },
+    {
+      "name": "Citi",
+      "ats": "workday",
+      "token": "citi",
+      "tenant": "citi",
+      "wd": "wd5",
+      "site": "2",
+      "sector": "fintech"
     },
     {
       "name": "ClassPass",
@@ -360,6 +396,14 @@
       "ats": "greenhouse",
       "token": "cultureamp",
       "sector": "saas"
+    },
+    {
+      "name": "Cummins",
+      "ats": "oracle",
+      "token": "cummins",
+      "host": "fa-espx-saasfaprod1.fa.ocs.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "industrial"
     },
     {
       "name": "Current",
@@ -476,6 +520,14 @@
       "sector": "ai"
     },
     {
+      "name": "Emerson",
+      "ats": "oracle",
+      "token": "emerson",
+      "host": "hdjq.fa.us2.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "industrial"
+    },
+    {
       "name": "Entrata",
       "ats": "lever",
       "token": "entrata",
@@ -551,6 +603,15 @@
       "sector": "fintech"
     },
     {
+      "name": "FIS",
+      "ats": "workday",
+      "token": "fis",
+      "tenant": "fis",
+      "wd": "wd5",
+      "site": "SearchJobs",
+      "sector": "fintech"
+    },
+    {
       "name": "FiscalNote",
       "ats": "lever",
       "token": "fiscalnote",
@@ -573,6 +634,14 @@
       "ats": "greenhouse",
       "token": "flexport",
       "sector": "marketplace"
+    },
+    {
+      "name": "Ford",
+      "ats": "oracle",
+      "token": "ford",
+      "host": "efds.fa.em5.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "industrial"
     },
     {
       "name": "Forter",
@@ -691,6 +760,15 @@
       "sector": "travel"
     },
     {
+      "name": "Hewlett Packard Enterprise",
+      "ats": "workday",
+      "token": "hpe",
+      "tenant": "hpe",
+      "wd": "wd5",
+      "site": "Jobsathpe",
+      "sector": "technology"
+    },
+    {
       "name": "Hex",
       "ats": "ashby",
       "token": "hex",
@@ -717,6 +795,15 @@
       "sector": "travel"
     },
     {
+      "name": "Home Depot",
+      "ats": "workday",
+      "token": "homedepot",
+      "tenant": "homedepot",
+      "wd": "wd5",
+      "site": "CareerDepot",
+      "sector": "retail"
+    },
+    {
       "name": "HomeLight",
       "ats": "greenhouse",
       "token": "homelight",
@@ -727,6 +814,14 @@
       "ats": "greenhouse",
       "token": "honeycomb",
       "sector": "saas"
+    },
+    {
+      "name": "Honeywell",
+      "ats": "oracle",
+      "token": "honeywell",
+      "host": "ibqbjb.fa.ocs.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "industrial"
     },
     {
       "name": "Hopper",
@@ -779,6 +874,23 @@
       "sector": "saas"
     },
     {
+      "name": "Johnson & Johnson",
+      "ats": "workday",
+      "token": "jnj",
+      "tenant": "jj",
+      "wd": "wd5",
+      "site": "JJ",
+      "sector": "healthcare"
+    },
+    {
+      "name": "JPMorgan Chase",
+      "ats": "oracle",
+      "token": "jpmorgan",
+      "host": "jpmc.fa.oraclecloud.com",
+      "site": "CX_1001",
+      "sector": "fintech"
+    },
+    {
       "name": "JumpCloud",
       "ats": "lever",
       "token": "jumpcloud",
@@ -801,6 +913,15 @@
       "ats": "ashby",
       "token": "kayak",
       "sector": "travel"
+    },
+    {
+      "name": "Kimberly-Clark",
+      "ats": "workday",
+      "token": "kimberlyclark",
+      "tenant": "kimberlyclark",
+      "wd": "wd1",
+      "site": "GLOBAL",
+      "sector": "consumer"
     },
     {
       "name": "Klaviyo",
@@ -877,10 +998,37 @@
       "sector": "travel"
     },
     {
+      "name": "Mastercard",
+      "ats": "workday",
+      "token": "mastercard",
+      "tenant": "mastercard",
+      "wd": "wd1",
+      "site": "CorporateCareers",
+      "sector": "fintech"
+    },
+    {
       "name": "MasterClass",
       "ats": "greenhouse",
       "token": "masterclass",
       "sector": "saas"
+    },
+    {
+      "name": "McKesson",
+      "ats": "workday",
+      "token": "mckesson",
+      "tenant": "mckesson",
+      "wd": "wd3",
+      "site": "External_Careers",
+      "sector": "healthcare"
+    },
+    {
+      "name": "Medtronic",
+      "ats": "workday",
+      "token": "medtronic",
+      "tenant": "medtronic",
+      "wd": "wd1",
+      "site": "MedtronicCareers",
+      "sector": "healthcare"
     },
     {
       "name": "Melio",
@@ -949,6 +1097,15 @@
       "sector": "fintech"
     },
     {
+      "name": "Mondelez",
+      "ats": "workday",
+      "token": "mondelez",
+      "tenant": "mdlz",
+      "wd": "wd3",
+      "site": "External",
+      "sector": "consumer"
+    },
+    {
       "name": "MongoDB",
       "ats": "greenhouse",
       "token": "mongodb",
@@ -971,6 +1128,15 @@
       "ats": "ashby",
       "token": "mutiny",
       "sector": "saas"
+    },
+    {
+      "name": "Nationwide",
+      "ats": "workday",
+      "token": "nationwide",
+      "tenant": "nationwide",
+      "wd": "wd1",
+      "site": "Nationwide_Career",
+      "sector": "fintech"
     },
     {
       "name": "Navan",
@@ -1016,6 +1182,15 @@
       "ats": "ashby",
       "token": "notion",
       "sector": "saas"
+    },
+    {
+      "name": "Novartis",
+      "ats": "workday",
+      "token": "novartis",
+      "tenant": "novartis",
+      "wd": "wd3",
+      "site": "Novartis_Careers",
+      "sector": "healthcare"
     },
     {
       "name": "Novo",
@@ -1205,6 +1380,15 @@
       "sector": "saas"
     },
     {
+      "name": "Procore",
+      "ats": "workday",
+      "token": "procore",
+      "tenant": "procore",
+      "wd": "wd12",
+      "site": "Procore_External_Careers",
+      "sector": "saas"
+    },
+    {
       "name": "project44",
       "ats": "greenhouse",
       "token": "project44",
@@ -1313,6 +1497,15 @@
       "sector": "ai"
     },
     {
+      "name": "Salesforce",
+      "ats": "workday",
+      "token": "salesforce",
+      "tenant": "salesforce",
+      "wd": "wd12",
+      "site": "External_Career_Site",
+      "sector": "saas"
+    },
+    {
       "name": "Salesloft",
       "ats": "greenhouse",
       "token": "salesloft",
@@ -1329,6 +1522,15 @@
       "ats": "ashby",
       "token": "sanity",
       "sector": "saas"
+    },
+    {
+      "name": "Sanofi",
+      "ats": "workday",
+      "token": "sanofi",
+      "tenant": "sanofi",
+      "wd": "wd3",
+      "site": "SanofiCareers",
+      "sector": "healthcare"
     },
     {
       "name": "Sardine",
@@ -1472,6 +1674,14 @@
       "sector": "saas"
     },
     {
+      "name": "Staples",
+      "ats": "oracle",
+      "token": "staples",
+      "host": "fa-exhh-saasfaprod1.fa.ocs.oraclecloud.com",
+      "site": "StaplesInc",
+      "sector": "retail"
+    },
+    {
       "name": "Starburst",
       "ats": "greenhouse",
       "token": "starburst",
@@ -1488,6 +1698,15 @@
       "ats": "greenhouse",
       "token": "stripe",
       "sector": "fintech"
+    },
+    {
+      "name": "Stryker",
+      "ats": "workday",
+      "token": "stryker",
+      "tenant": "stryker",
+      "wd": "wd1",
+      "site": "StrykerCareers",
+      "sector": "healthcare"
     },
     {
       "name": "Stytch",
@@ -1518,6 +1737,15 @@
       "ats": "ashby",
       "token": "synthesia",
       "sector": "ai"
+    },
+    {
+      "name": "Sysco",
+      "ats": "workday",
+      "token": "sysco",
+      "tenant": "sysco",
+      "wd": "wd5",
+      "site": "syscocareers",
+      "sector": "retail"
     },
     {
       "name": "Sysdig",
@@ -1568,6 +1796,14 @@
       "sector": "fintech"
     },
     {
+      "name": "TriNet",
+      "ats": "oracle",
+      "token": "trinet",
+      "host": "fa-etgw-saasfaprod1.fa.ocs.oraclecloud.com",
+      "site": "CX_1",
+      "sector": "fintech"
+    },
+    {
       "name": "Tripadvisor",
       "ats": "greenhouse",
       "token": "tripadvisor",
@@ -1610,9 +1846,27 @@
       "sector": "saas"
     },
     {
+      "name": "Verizon",
+      "ats": "workday",
+      "token": "verizon",
+      "tenant": "verizon",
+      "wd": "wd12",
+      "site": "verizon-careers",
+      "sector": "telecom"
+    },
+    {
       "name": "Very Good Security",
       "ats": "lever",
       "token": "verygoodsecurity",
+      "sector": "fintech"
+    },
+    {
+      "name": "Visa",
+      "ats": "workday",
+      "token": "visa",
+      "tenant": "visa",
+      "wd": "wd5",
+      "site": "Visa",
       "sector": "fintech"
     },
     {
