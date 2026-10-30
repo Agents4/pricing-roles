@@ -15,7 +15,7 @@ export const CATEGORIES = [
   {
     slug: "revenue-management",
     name: "Revenue management",
-    intro: "Revenue management and yield roles set prices against demand, capacity, and mix. Listings here are live postings from public applicant-tracking boards.",
+    intro: "Revenue management and yield roles set prices against demand, capacity, and mix, including airline, hotel, cruise, and other travel revenue management. Listings here are live postings from public applicant-tracking boards.",
   },
   {
     slug: "packaging",
@@ -93,8 +93,20 @@ const STRONG = [
   /\bdeal\s*desk\b/i,
   /\brevenue\s+management\b/i,
   /\brevenue\s+strategy\b/i,
-  /\byield\s+management\b/i,
+  /\brevenue\s+managers?\b/i,
+  /\brevenue\s+optimi[sz]/i,
+  /\byield\s+(management|managers?|analysts?|specialists?)\b/i,
+  /\bcommercial\s+revenue\b/i,
+  /\bnetwork\s*(?:&|and)\s*revenue\b/i,
+  /\bnetwork\s+revenue\b/i,
+  /\brm\s+analysts?\b/i,
+  /\binventory\s*(?:&|and|\/)\s*pricing\b/i,
+  /\bpricing\s*(?:&|and|\/)\s*inventory\b/i,
 ];
+
+// Generic "revenue analyst" stays out. Hospitality and revenue-management
+// titles ("Hotel Revenue Analyst") are the pricing job.
+const HOSPITALITY = /\b(hospitality|hotels?|airlines?|aviation|cruises?|lodging|resorts?|revpar|occupancy|vacation\s+rentals?|short[-\s]?term\s+rentals?|car\s+rentals?|travel)\b/i;
 
 const EXCLUDE = [
   /\b(clerk|cashier|stocker|barista)\b/i,
@@ -176,6 +188,15 @@ export function categoryFor(title) {
   if (/\bdeal\s*desk\b/i.test(title)) return "deal-desk";
   if (/moneti[sz]/i.test(title)) return "monetization";
   if (/\b(revenue|yield)\s+management\b/i.test(title)) return "revenue-management";
+  if (/\brevenue\s+managers?\b/i.test(title)) return "revenue-management";
+  if (/\brevenue\s+optimi[sz]/i.test(title)) return "revenue-management";
+  if (/\byield\s+(managers?|analysts?)\b/i.test(title)) return "revenue-management";
+  if (/\bcommercial\s+revenue\b/i.test(title)) return "revenue-management";
+  if (/\bnetwork\s*(?:&|and)\s*revenue\b/i.test(title) || /\bnetwork\s+revenue\b/i.test(title)) return "revenue-management";
+  if (/\brm\s+analysts?\b/i.test(title)) return "revenue-management";
+  if (/\binventory\s*(?:&|and|\/)\s*pricing\b/i.test(title) || /\bpricing\s*(?:&|and|\/)\s*inventory\b/i.test(title)) return "revenue-management";
+  if (/\brevenue\s+analysts?\b/i.test(title)) return "revenue-management";
+  if (/\bdemand\s+analysts?\b/i.test(title) && /\b(revenue|yield)\b/i.test(title)) return "revenue-management";
   if (/\bpackaging\b/i.test(title)) return "packaging";
   if (
     /\b(pricing|price)\s+(ops|operations)\b/i.test(title)
@@ -201,14 +222,29 @@ export function seniorityFor(title) {
   return "mid";
 }
 
+function contextualRevenueMatch(title) {
+  if (/\b(accountant|accounting|bookkeeper)\b/i.test(title)) return false;
+  if (/\brevenue\s+(operations|ops)\b/i.test(title)) return false;
+  if (/\brevenue\s+analysts?\b/i.test(title)) {
+    return HOSPITALITY.test(title) || /\b(yield|revenue\s+management)\b/i.test(title);
+  }
+  if (/\bdemand\s+analysts?\b/i.test(title)) {
+    return /\b(pric(?:e|ing)|revenue|yield)\b/i.test(title);
+  }
+  return false;
+}
+
 export function classifyTitle(title) {
   const cleaned = String(title || "").replace(/\s+/g, " ").trim();
   if (!cleaned) return null;
   const strong = STRONG.some((pattern) => pattern.test(cleaned));
-  if (!strong && !packagingMatch(cleaned)) return null;
+  if (!strong && !packagingMatch(cleaned) && !contextualRevenueMatch(cleaned)) return null;
   if (EXCLUDE.some((pattern) => pattern.test(cleaned))) return null;
   if (isEngineering(cleaned)) return null;
   if (/\bresearcher\b/i.test(cleaned) && !/\bpricing researcher\b/i.test(cleaned)) return null;
+  if (/\brevenue\s+(operations|ops)\b/i.test(cleaned) && !/\b(pric(?:e|ing)|moneti[sz]|deal\s*desk|revenue\s+management|yield|revenue\s+strateg)\b/i.test(cleaned)) {
+    return null;
+  }
   return {
     category: categoryFor(cleaned),
     seniority: seniorityFor(cleaned),

@@ -37,6 +37,12 @@
       "sector": "saas"
     },
     {
+      "name": "Agoda",
+      "ats": "greenhouse",
+      "token": "agoda",
+      "sector": "travel"
+    },
+    {
       "name": "Airbnb",
       "ats": "greenhouse",
       "token": "airbnb",
@@ -65,6 +71,12 @@
       "ats": "greenhouse",
       "token": "algolia",
       "sector": "saas"
+    },
+    {
+      "name": "Allegiant",
+      "ats": "lever",
+      "token": "allegiantair",
+      "sector": "travel"
     },
     {
       "name": "Alloy",
@@ -386,6 +398,12 @@
       "sector": "ai"
     },
     {
+      "name": "Despegar",
+      "ats": "lever",
+      "token": "despegar",
+      "sector": "travel"
+    },
+    {
       "name": "Discord",
       "ats": "greenhouse",
       "token": "discord",
@@ -408,6 +426,12 @@
       "ats": "greenhouse",
       "token": "dropbox",
       "sector": "saas"
+    },
+    {
+      "name": "Duetto",
+      "ats": "greenhouse",
+      "token": "duettoresearch",
+      "sector": "travel"
     },
     {
       "name": "Duolingo",
@@ -468,6 +492,12 @@
       "ats": "greenhouse",
       "token": "feedzai",
       "sector": "fintech"
+    },
+    {
+      "name": "Fever",
+      "ats": "greenhouse",
+      "token": "feverup",
+      "sector": "travel"
     },
     {
       "name": "Figma",
@@ -552,6 +582,12 @@
       "ats": "greenhouse",
       "token": "gemini",
       "sector": "fintech"
+    },
+    {
+      "name": "GetYourGuide",
+      "ats": "greenhouse",
+      "token": "getyourguide",
+      "sector": "travel"
     },
     {
       "name": "Ghost",
@@ -704,6 +740,18 @@
       "sector": "fintech"
     },
     {
+      "name": "Kasa",
+      "ats": "greenhouse",
+      "token": "kasa",
+      "sector": "travel"
+    },
+    {
+      "name": "Kayak",
+      "ats": "ashby",
+      "token": "kayak",
+      "sector": "travel"
+    },
+    {
       "name": "Klaviyo",
       "ats": "greenhouse",
       "token": "klaviyo",
@@ -758,6 +806,12 @@
       "sector": "saas"
     },
     {
+      "name": "Loveholidays",
+      "ats": "ashby",
+      "token": "loveholidays",
+      "sector": "travel"
+    },
+    {
       "name": "Lyft",
       "ats": "greenhouse",
       "token": "lyft",
@@ -786,6 +840,12 @@
       "ats": "greenhouse",
       "token": "mercury",
       "sector": "fintech"
+    },
+    {
+      "name": "Mews",
+      "ats": "greenhouse",
+      "token": "mewssystems",
+      "sector": "travel"
     },
     {
       "name": "Middesk",
@@ -900,6 +960,18 @@
       "ats": "ashby",
       "token": "nubank",
       "sector": "fintech"
+    },
+    {
+      "name": "Nuitee",
+      "ats": "greenhouse",
+      "token": "nuitee",
+      "sector": "travel"
+    },
+    {
+      "name": "Ocra",
+      "ats": "ashby",
+      "token": "ocra",
+      "sector": "travel"
     },
     {
       "name": "OfferUp",
@@ -1155,6 +1227,18 @@
       "sector": "marketplace"
     },
     {
+      "name": "RoomPriceGenie",
+      "ats": "ashby",
+      "token": "roompricegenie",
+      "sector": "travel"
+    },
+    {
+      "name": "Ruby Hotels",
+      "ats": "greenhouse",
+      "token": "rubyhotels",
+      "sector": "travel"
+    },
+    {
       "name": "Runway",
       "ats": "ashby",
       "token": "runway-ml",
@@ -1275,6 +1359,12 @@
       "sector": "fintech"
     },
     {
+      "name": "Soho House",
+      "ats": "greenhouse",
+      "token": "sohohouseco",
+      "sector": "travel"
+    },
+    {
       "name": "Sonatype",
       "ats": "lever",
       "token": "sonatype",
@@ -1369,6 +1459,12 @@
       "ats": "greenhouse",
       "token": "taskrabbit",
       "sector": "marketplace"
+    },
+    {
+      "name": "The Social Hub",
+      "ats": "greenhouse",
+      "token": "thesocialhub",
+      "sector": "travel"
     },
     {
       "name": "Thumbtack",

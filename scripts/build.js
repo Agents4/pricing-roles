@@ -124,6 +124,8 @@ function page({ title, description, path, main, jsonLd, locked = {}, robots = "i
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5N0MW5WC3N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5N0MW5WC3N');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
@@ -220,7 +222,7 @@ function aboutMain() {
     <div class="prose">
       <p>PricingRoles lists open roles in pricing, monetization, deal desk, packaging, and revenue strategy. The audience is pricing professionals, from analysts to heads of pricing.</p>
       <p>Roles are read from public Greenhouse, Lever, and Ashby job boards. PricingRoles does not log in, and it does not repost a private careers site. The apply link goes to the company’s own posting.</p>
-      <p>Titles are filtered. Retail pricing clerks and generic sales roles that only mention revenue are left out. Postings older than 60 days are dropped. A company is tracked when it is a software, AI, fintech, or marketplace business that hires this kind of work.</p>
+      <p>Titles are filtered. Retail pricing clerks and generic sales roles that only mention revenue are left out. Postings older than 60 days are dropped. A company is tracked when it hires this kind of work, including software, AI, fintech, marketplace, and travel and hospitality revenue management teams.</p>
       <p>Paid featured listings are separate from that feed. They are described on the post a job page and are not switched on yet.</p>
     </div>
   </section>`;
