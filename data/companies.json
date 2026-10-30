@@ -1413,6 +1413,15 @@
       "sector": "saas"
     },
     {
+      "name": "Southwest Airlines",
+      "ats": "workday",
+      "token": "swa",
+      "tenant": "swa",
+      "wd": "wd1",
+      "site": "external",
+      "sector": "travel"
+    },
+    {
       "name": "Spotify",
       "ats": "lever",
       "token": "spotify",

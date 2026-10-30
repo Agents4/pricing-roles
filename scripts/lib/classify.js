@@ -93,6 +93,8 @@ const STRONG = [
   /\bdeal\s*desk\b/i,
   /\brevenue\s+management\b/i,
   /\brevenue\s+strategy\b/i,
+  /\brev\.?\s+strateg/i,
+  /\b(revenue|rev\.?)\s+forecast/i,
   /\brevenue\s+managers?\b/i,
   /\brevenue\s+optimi[sz]/i,
   /\byield\s+(management|managers?|analysts?|specialists?)\b/i,
@@ -195,6 +197,7 @@ export function categoryFor(title) {
   if (/\bnetwork\s*(?:&|and)\s*revenue\b/i.test(title) || /\bnetwork\s+revenue\b/i.test(title)) return "revenue-management";
   if (/\brm\s+analysts?\b/i.test(title)) return "revenue-management";
   if (/\binventory\s*(?:&|and|\/)\s*pricing\b/i.test(title) || /\bpricing\s*(?:&|and|\/)\s*inventory\b/i.test(title)) return "revenue-management";
+  if (/\b(revenue|rev\.?)\s+forecast/i.test(title)) return "revenue-management";
   if (/\brevenue\s+analysts?\b/i.test(title)) return "revenue-management";
   if (/\bdemand\s+analysts?\b/i.test(title) && /\b(revenue|yield)\b/i.test(title)) return "revenue-management";
   if (/\bpackaging\b/i.test(title)) return "packaging";
@@ -242,9 +245,12 @@ export function classifyTitle(title) {
   if (EXCLUDE.some((pattern) => pattern.test(cleaned))) return null;
   if (isEngineering(cleaned)) return null;
   if (/\bresearcher\b/i.test(cleaned) && !/\bpricing researcher\b/i.test(cleaned)) return null;
-  if (/\brevenue\s+(operations|ops)\b/i.test(cleaned) && !/\b(pric(?:e|ing)|moneti[sz]|deal\s*desk|revenue\s+management|yield|revenue\s+strateg)\b/i.test(cleaned)) {
-    return null;
-  }
+  if (/\baccounting\b/i.test(cleaned) && !/\b(pric(?:e|ing)|moneti[sz]|deal\s*desk)\b/i.test(cleaned)) return null;
+  if (/\bsales\s+(operations|ops)\b/i.test(cleaned) && !/\b(pric(?:e|ing)|moneti[sz]|deal\s*desk)\b/i.test(cleaned)) return null;
+  const revenueOpsException = /\b(pric(?:e|ing)|moneti[sz]|deal\s*desk|revenue\s+management|yield)\b/i.test(cleaned)
+    || /\brevenue\s+strateg/i.test(cleaned)
+    || /\brev\.?\s+strateg/i.test(cleaned);
+  if (/\brevenue\s+(operations|ops)\b/i.test(cleaned) && !revenueOpsException) return null;
   return {
     category: categoryFor(cleaned),
     seniority: seniorityFor(cleaned),
