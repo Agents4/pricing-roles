@@ -1,11 +1,11 @@
-import { classifyTitle, isFresh } from "./classify.js";
+import { classifyTitle, isFresh, normalizeTitle } from "./classify.js";
 import { emptySalary } from "./salary.js";
 import { slugify } from "./text.js";
 import { workplaceFromSignals } from "./workplace.js";
 
 export function buildJob(input, now = Date.now()) {
-  const title = String(input.title || "").replace(/\s+/g, " ").trim();
-  const classification = classifyTitle(title);
+  const title = normalizeTitle(input.title);
+  const classification = classifyTitle(title, input.description);
   if (!classification) return null;
   if (!input.postedAt || !isFresh(input.postedAt, now)) return null;
   const applyUrl = String(input.applyUrl || "").trim();
