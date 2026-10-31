@@ -136,7 +136,31 @@ const EXCLUDE = [
   /\blegal\b/i,
 ];
 
+// Pricing words inside trading, treasury-ops, or order-to-cash titles.
+const OFF_TOPIC = [
+  /\border[\s-]*to[\s-]*cash\b/i,
+  /\bo2c\b/i,
+  /\bcash\s+application\b/i,
+  /\breceivables\b/i,
+  /\bbilling\b(?:\s*[&/]\s*|\s+and\s+)invoic/i,
+  /\binvoic(?:e|ing)\b(?:\s*[&/]\s*|\s+and\s+)billing\b/i,
+  /\bxva\b/i,
+  /\bfixed\s+income\b/i,
+  /\bderivatives?\b/i,
+  /\bsecurities\b/i,
+  /\bindex\s+operations\b/i,
+  /\bpricing\s+controls\b/i,
+  /\bfx\s+options\b/i,
+  /\bfx\s+e-?trading\b/i,
+  /\be-?trading\b/i,
+];
+
+// Revenue accounting uses "revenue manager" and "revenue strategy" without
+// being hotel, airline, cruise, or commercial revenue management.
+const ACCOUNTING_BODY = /\b(revenue\s+accounting|revenue\s+recognition|asc\s*606)\b/i;
+
 const ENGINEERING = [
+  /\bsoftware\s+engineering\b/i,
   /\bsoftware engineer\b/i,
   /\bsoftware developer\b/i,
   /\bfront[-\s]?end engineer\b/i,
@@ -184,6 +208,31 @@ function isEngineering(title) {
   if (/\b(revenue management|yield management) engineer\b/i.test(title)) return false;
   if (ENGINEERING.some((pattern) => pattern.test(title))) return true;
   return /\bengineer\b/i.test(title);
+}
+
+function isOffTopic(title) {
+  if (OFF_TOPIC.some((pattern) => pattern.test(title))) return true;
+  // Insurance pricing actuaries say "valuation" for reserving work.
+  if (/\bvaluation\b/i.test(title) && !/\b(actuar(?:y|ial)|insurance)\b/i.test(title)) return true;
+  return false;
+}
+
+function genericRevenueTitle(title) {
+  const revenue = /\brevenue\s+(managers?|management)\b/i.test(title)
+    || /\brevenue\s+strateg/i.test(title)
+    || /\brev\.?\s+strateg/i.test(title);
+  if (!revenue) return false;
+  if (HOSPITALITY.test(title)) return false;
+  if (/\b(pric(?:e|ing)|moneti[sz]|yield|deal\s*desk)\b/i.test(title)) return false;
+  return true;
+}
+
+export function normalizeTitle(title) {
+  return String(title || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/^job posting title\s*[:\-–—]?\s*/i, "")
+    .trim();
 }
 
 export function categoryFor(title) {
@@ -237,13 +286,15 @@ function contextualRevenueMatch(title) {
   return false;
 }
 
-export function classifyTitle(title) {
-  const cleaned = String(title || "").replace(/\s+/g, " ").trim();
+export function classifyTitle(title, description = "") {
+  const cleaned = normalizeTitle(title);
   if (!cleaned) return null;
   const strong = STRONG.some((pattern) => pattern.test(cleaned));
   if (!strong && !packagingMatch(cleaned) && !contextualRevenueMatch(cleaned)) return null;
   if (EXCLUDE.some((pattern) => pattern.test(cleaned))) return null;
+  if (isOffTopic(cleaned)) return null;
   if (isEngineering(cleaned)) return null;
+  if (genericRevenueTitle(cleaned) && ACCOUNTING_BODY.test(String(description || ""))) return null;
   if (/\bresearcher\b/i.test(cleaned) && !/\bpricing researcher\b/i.test(cleaned)) return null;
   if (/\baccounting\b/i.test(cleaned) && !/\b(pric(?:e|ing)|moneti[sz]|deal\s*desk)\b/i.test(cleaned)) return null;
   if (/\bsales\s+(operations|ops)\b/i.test(cleaned) && !/\b(pric(?:e|ing)|moneti[sz]|deal\s*desk)\b/i.test(cleaned)) return null;
