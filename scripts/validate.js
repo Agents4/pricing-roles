@@ -9,6 +9,10 @@ import { escapeHtml } from "./lib/text.js";
 const GA_SNIPPET = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-5N0MW5WC3N"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5N0MW5WC3N');</script>`;
 
+// Well below a normal refresh (a few hundred roles) and above an empty or broken feed.
+const MIN_OPEN_ROLES = 20;
+const REQUIRED_FIELDS = ["id", "slug", "title", "company", "location", "workplace", "postedAt", "applyUrl", "category", "seniority"];
+
 const root = fileURLToPath(new URL("..", import.meta.url));
 const dist = join(root, "dist");
 const companies = JSON.parse(await readFile(join(root, "data", "companies.json"), "utf8")).companies;
@@ -17,11 +21,18 @@ const jobs = data.jobs;
 const now = Date.parse(data.generatedAt);
 
 assert.ok(companies.length >= 150, `expected at least 150 companies, found ${companies.length}`);
-assert.ok(jobs.length > 0, "expected at least one current pricing job");
+assert.ok(jobs.length >= MIN_OPEN_ROLES, `expected at least ${MIN_OPEN_ROLES} open roles, found ${jobs.length}`);
 assert.equal(data.jobCount, jobs.length);
+assert.ok(data.companiesWithRoles > 0, "expected at least one company with an open role");
+assert.equal(data.companiesWithRoles, new Set(jobs.map((job) => job.company)).size);
 
 const slugs = new Set();
 for (const job of jobs) {
+  for (const field of REQUIRED_FIELDS) {
+    assert.ok(String(job[field] ?? "").trim(), `${job.id || "job"} missing ${field}`);
+  }
+  assert.ok(CATEGORIES.some((category) => category.slug === job.category), job.category);
+  assert.ok(job.workplace === "unknown" || WORKPLACES.some((place) => place.slug === job.workplace), job.workplace);
   assert.equal(classifyTitle(job.title)?.category, job.category, job.title);
   assert.equal(classifyTitle(job.title)?.seniority, job.seniority, job.title);
   assert.equal(isFresh(job.postedAt, now), true, job.title);
@@ -57,9 +68,23 @@ for (const workplace of WORKPLACES) {
 }
 
 const home = await readFile(join(dist, "index.html"), "utf8");
+assert.ok(home.includes("<!DOCTYPE html>") && home.includes("<main id=\"content\">"), "homepage did not render");
 assert.match(home, /Pricing roles, without the noise/);
 assert.doesNotMatch(home, /Agents\s*4/i);
-assert.match(home, new RegExp(escapeRegExp(jobs[0].title)));
+assert.match(home, /<div class="jobs">/);
+assert.doesNotMatch(home, /No open roles in this view right now/);
+assert.ok(home.includes(`${jobs.length} open roles`), "homepage role count does not match the current jobs file");
+assert.ok(home.includes(`<strong id="result-count">${jobs.length}</strong>`), "homepage result count does not match the current jobs file");
+assert.ok(home.includes(`${data.companiesWithRoles} companies hiring`), "homepage company count does not match the current jobs file");
+const cardCount = (home.match(/<a class="job"/g) || []).length;
+assert.equal(cardCount, jobs.length, "homepage did not render a card for every current role");
+for (const job of jobs) {
+  assert.ok(
+    home.includes(`<div class="job-title">${escapeHtml(job.title)}</div>`),
+    `homepage is missing a title from the current jobs file (${job.slug})`,
+  );
+  assert.ok(home.includes(`href="jobs/${job.slug}/"`), `homepage is missing a link for ${job.slug}`);
+}
 assertAnalytics(home);
 
 const about = await readFile(join(dist, "about", "index.html"), "utf8");
@@ -78,6 +103,7 @@ for (const job of jobs) {
   const json = extractJobPosting(html);
   assert.equal(json["@type"], "JobPosting");
   assert.equal(json.title, job.title);
+  assert.ok(html.includes(`<h1>${escapeHtml(job.title)}</h1>`), `job page is missing the current title (${job.slug})`);
   assert.ok(json.description && json.description.length > 20);
   assert.match(json.datePosted, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(json.directApply, false);
